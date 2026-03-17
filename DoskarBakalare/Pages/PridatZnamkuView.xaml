@@ -1,0 +1,32 @@
+﻿<Page x:Class="DoskarBakalare.Pages.PridatZnamkuView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DoskarBakalare.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PridatZnamkuView">
+
+    <Grid Background="AntiqueWhite">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="200*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="128*"/>
+            <RowDefinition Height="323*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Znamka" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBox Height="50" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top"/>
+        <TextBlock Text="Vaha" Grid.Row="2" Grid.Column="4"/>
+        
+        <TextBlock Text="Téma" Grid.Row="2" Grid.Column="4"/>
+        <TextBlock Text="Datum" Grid.Row="2" Grid.Column="4"/>
+
+
+    </Grid>
+</Page>

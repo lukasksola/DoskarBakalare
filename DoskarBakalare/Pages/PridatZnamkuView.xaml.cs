@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -9,20 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DoskarBakalare
+namespace DoskarBakalare.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interakční logika pro PridatZnamkuView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PridatZnamkuView : Page
     {
-        public MainWindow()
+        public PridatZnamkuView()
         {
             InitializeComponent();
-            var io = new IOznamky();
-            IOznamky.instance = io;
-
-            
         }
     }
 }
