@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DoskarBakalare.Pages;
+using DoskarBakalare.Znamky;
 
 namespace DoskarBakalare
 {
@@ -19,10 +21,8 @@ namespace DoskarBakalare
         public MainWindow()
         {
             InitializeComponent();
-            var io = new IOznamky();
-            IOznamky.instance = io;
+            frameNavigaiton.Navigate(new znamkyView());
 
-            
         }
     }
 }

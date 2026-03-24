@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DoskarBakalare.DB;
+using DoskarBakalare.Znamky;
 
 namespace DoskarBakalare.Pages
 {
@@ -24,12 +26,16 @@ namespace DoskarBakalare.Pages
         {
             InitializeComponent();
             this.DataContext = this;
-            ZnamkyHolder.ItemsSource = IOznamky.instance.Zapisy;
+
+            var input = new ZnamkyI();
+            input.ReadDb();
+            ZnamkyHolder.ItemsSource = input.LoadedZnamky;
+
         }
 
         private void PridatZnamku(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new PridatZnamkuView());
         }
         private void OdebratZnamku(object sender, RoutedEventArgs e)
         {

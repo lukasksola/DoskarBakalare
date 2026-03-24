@@ -24,5 +24,10 @@ namespace DoskarBakalare.Pages
         {
             InitializeComponent();
         }
+
+        private void Return(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

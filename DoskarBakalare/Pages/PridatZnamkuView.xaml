@@ -10,7 +10,7 @@
 
     <Grid Background="AntiqueWhite">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="150*"/>
             <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="250*"/>
             <ColumnDefinition Width="200*"/>
@@ -19,14 +19,20 @@
             <RowDefinition Height="128*"/>
             <RowDefinition Height="323*"/>
         </Grid.RowDefinitions>
-
-        <TextBlock Text="Znamka" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        <TextBox Height="50" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top"/>
-        <TextBlock Text="Vaha" Grid.Row="2" Grid.Column="4"/>
         
-        <TextBlock Text="Téma" Grid.Row="2" Grid.Column="4"/>
-        <TextBlock Text="Datum" Grid.Row="2" Grid.Column="4"/>
+        <Button Width="50" Height="50" Content="&lt;-" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="25" Click="Return"/>
 
+        <TextBlock Text="Znamka" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20,0,10,0"/>
+        <TextBox Grid.Row="1" Grid.Column="0" Height="50" Margin="20,10,10,0" VerticalAlignment="Top" FontSize="25" Name="hodnota"/>
+        
+        <TextBlock Text="Vaha" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Height="50" Margin="10,10,10,0" VerticalAlignment="Top" FontSize="25" Name="vaha"/>
+        
+        <TextBlock Text="Téma" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Height="50" Margin="10,10,10,0" VerticalAlignment="Top" FontSize="15" Name="tema"/>
+
+        <TextBlock Text="Datum" Grid.Row="0" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <DatePicker Grid.Row="1" Grid.Column="3" Height="150" VerticalAlignment="Top" Margin="10,10,10,0"/>
 
     </Grid>
 </Page>

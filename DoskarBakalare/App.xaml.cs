@@ -1,6 +1,8 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using DoskarBakalare.DB;
+using Microsoft.EntityFrameworkCore;
 
 namespace DoskarBakalare
 {
@@ -9,6 +11,28 @@ namespace DoskarBakalare
     /// </summary>
     public partial class App : Application
     {
+        protected override async void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            await InitializeDatabaseAsync();
+
+        }
+
+        private async Task InitializeDatabaseAsync()
+        {
+            try
+            {
+                using (var db = new SqliteContext())
+                {
+                    await db.Database.MigrateAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database initialization failed:\n\n" + ex.Message);
+            }
+        }
     }
 
 }
