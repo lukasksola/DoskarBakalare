@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PridatZnamkuView">
 
-    <Grid Background="AntiqueWhite">
+    <Grid Background="#FF000035">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150*"/>
             <ColumnDefinition Width="100*"/>
@@ -21,23 +21,23 @@
             <RowDefinition Height="217*"/>
             <RowDefinition Height="105*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="UPRAVIT" Grid.Column="1" Grid.ColumnSpan="2" FontSize="50" HorizontalAlignment="Center"/>
+        <TextBlock Text="UPRAVIT" Grid.Column="1" Grid.ColumnSpan="2" FontSize="50" HorizontalAlignment="Center" Foreground="White"/>
 
         <Button Width="50" Height="50" Content="&lt;-" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="25" Click="Return"/>
 
-        <TextBlock Text="Znamka" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,55,0,0" />
+        <TextBlock Text="Znamka" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,55,0,0"  Foreground="White"/>
         <TextBox Grid.Row="2" Grid.Column="0" Height="50" Margin="20,10,10,0" VerticalAlignment="Top" FontSize="25" Text="{Binding Hodnota,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Name="hodnotaBoxUpravit" />
 
-        <TextBlock Text="Vaha" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+        <TextBlock Text="Vaha" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,55,0,0" Foreground="White"/>
         <TextBox Grid.Row="2" Grid.Column="1" Height="50" Margin="10,10,10,0" VerticalAlignment="Top" FontSize="25" Text="{Binding Vaha,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Name="vahaBoxUpravit"/>
 
-        <TextBlock Text="Téma" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+        <TextBlock Text="Téma" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,55,0,0" Foreground="White"/>
         <TextBox Grid.Row="2" Grid.Column="2" Height="50" Margin="10,10,10,0" VerticalAlignment="Top" FontSize="15" Text="{Binding Tema,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Name="temaBoxUpravit"/>
 
-        <TextBlock Text="Datum" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+        <TextBlock Text="Datum" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,55,0,0" Foreground="White"/>
         <DatePicker Grid.Row="2" Grid.Column="3" Height="50" VerticalAlignment="Top" Margin="10,10,18,0" Name="dateUpravit"/>
 
-        <Button Grid.Row="3" Grid.Column="3"   Margin="10,10,10,10" Content="Upravit" Click="Confirm" FontSize="40" />
+        <Button Grid.Row="3" Grid.Column="3"   Margin="20" Content="Upravit" Click="Confirm" FontSize="40" />
 
 
     </Grid>

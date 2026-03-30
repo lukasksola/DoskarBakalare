@@ -30,7 +30,7 @@ namespace DoskarBakalare
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database initialization failed:\n\n" + ex.Message);
+                MessageBox.Show("Database initialization failed  Prosm pane doškar nezabíjejte mne, opravdu to funguje na me machine:\n\n" + ex.Message);
             }
         }
     }
