@@ -23,7 +23,7 @@ namespace DoskarBakalare.Pages
     /// <summary>
     /// Interakční logika pro PridatZnamkuView.xaml
     /// </summary>
-    public partial class PridatZnamkuView : Page, INotifyPropertyChanged
+    public partial class UpravitZnamkuView : Page, INotifyPropertyChanged
     {
         int hodnota;
 
@@ -83,14 +83,20 @@ namespace DoskarBakalare.Pages
         }
         public int idPredmetu;
 
-        public PridatZnamkuView(int idPredmetu)
+        public int Id;
+
+        public UpravitZnamkuView(int idPredmetu, Zapis zapis)
         {
             InitializeComponent();
             this.DataContext = this;
-            Hodnota = 1;
-            Vaha = 5;
-            Tema = "téma";
-            this.idPredmetu = idPredmetu;
+            Id = zapis.Id;
+            Hodnota = zapis.Hodnota;
+            Vaha = zapis.Vaha;
+            Tema = zapis.Popis;
+            dateUpravit.SelectedDate = zapis.Date;
+            idPredmetu = zapis.IdCloveka;
+
+            this.idPredmetu = zapis.IdCloveka;
         }
 
         private void Return(object sender, RoutedEventArgs e)
@@ -101,22 +107,24 @@ namespace DoskarBakalare.Pages
         private void Confirm(object sender, RoutedEventArgs e)
         {
 
-            if(Validation.GetHasError(hodnotaBox) || Validation.GetHasError(vahaBox) || Validation.GetHasError(temaBox) || date.SelectedDate == null)
+            if(Validation.GetHasError(hodnotaBoxUpravit) || Validation.GetHasError(vahaBoxUpravit) || Validation.GetHasError(temaBoxUpravit) || dateUpravit.SelectedDate == null)
             {
                 MessageBox.Show("INPUT ERROR");
             } else
             {
-                MessageBox.Show($"Pridano");
+                MessageBox.Show($"Upraveno");
 
 
                 Zapis newZapis = new Zapis();
+
+                newZapis.Id = Id;
                 newZapis.Hodnota = Hodnota;
                 newZapis.Vaha = Vaha;
                 newZapis.Popis = Tema;
-                newZapis.Date = (DateTime)date.SelectedDate;
+                newZapis.Date = (DateTime)dateUpravit.SelectedDate;
                 newZapis.IdCloveka = idPredmetu;
 
-                ZnamkyO.instance.AddZapis(newZapis);
+                ZnamkyO.instance.UpravitZapis(newZapis);
             }
                 
         }

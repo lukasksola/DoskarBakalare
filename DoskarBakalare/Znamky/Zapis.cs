@@ -10,7 +10,7 @@ namespace DoskarBakalare.Znamky
     {
         public int Id { get; set; }
         public int Hodnota { get; set; }
-        public string Vaha { get; set; }
+        public int Vaha { get; set; }
         public string Popis { get; set; }
         public DateTime Date { get; set; }
 

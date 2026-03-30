@@ -13,16 +13,16 @@
             <ColumnDefinition Width="51*"/>
             <ColumnDefinition Width="29*"/>
         </Grid.ColumnDefinitions>
-        <ListView Background="LightCyan" Grid.Column="0" Name="ZnamkyHolder">
+        <ListView Background="LightCyan" Grid.Column="0" Name="ZnamkyHolder" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.View>
-                <GridView>
+                <GridView >
                     <GridViewColumn Header="Znamka" Width="100" DisplayMemberBinding="{Binding Hodnota}">
                     </GridViewColumn>
                     <GridViewColumn Header="Vaha" Width="100" DisplayMemberBinding="{Binding Vaha}">
                     </GridViewColumn>
                     <GridViewColumn Header="Tema" Width="200" DisplayMemberBinding="{Binding Popis}">
                     </GridViewColumn>
-                    <GridViewColumn Header="Datum" Width="100" DisplayMemberBinding="{Binding Datum}">
+                    <GridViewColumn Header="Datum" Width="100" DisplayMemberBinding="{Binding Date}">
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
@@ -33,6 +33,12 @@
             <Button Content="Odebrat Znamku" Width="150" Height="50" Click="OdebratZnamku"/>
             <Button Content="Upravit Znamku" Width="150" Height="50" Click="UpravitZnamku"/>
         </StackPanel>
+
+        <TextBlock Text="Id predmetu" Grid.Column="1" VerticalAlignment="Bottom"  HorizontalAlignment="Left" Margin="10,0,10,40"/>
+        <TextBox Text="{Binding IdPredmetu, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" VerticalAlignment="Bottom" Margin="10,0,10,10" Width="30" TextAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock Text="Pocet znamek v predmetu: " Grid.Column="1" VerticalAlignment="Bottom" Margin="80,0,10,10" Width="150" TextAlignment="Center" Name="PocetZnamek"/>
+        
+        <TextBlock Text="{Binding Prumer, Mode=OneWay}" Grid.Column="1" VerticalAlignment="Bottom" Margin="80,0,10,40" Width="200" TextAlignment="Center" Name="PrumerZnamek"/>
 
 
     </Grid>
